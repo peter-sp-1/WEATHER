@@ -1,10 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
 import requests
+from environs import Env
+import os
+env = Env()
+env.read_env(".env")
+api_key = os.getenv("api_key")
 
 
 def get_weather_data(city, units='metric'):
-    api_key = 'b4f9509abbd7914c9d284c04efa79e0a'
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&units={units}&appid={api_key}'
     response = requests.get(url)
     return response.json()
