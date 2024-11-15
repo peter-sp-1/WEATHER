@@ -40,7 +40,7 @@ def fetch_weather():
     if weather: 
         weather_info = (
         f"Location: {weather['location']}\n"
-        f"Tempeature: {weather['temperature']}\n°"
+        f"Tempeature: {weather['temperature']}°\n"
         f"Humidity: {weather['humidity']}%\n"
         f"Wind-Speed: {weather['wind-speed']} m/s"
         )
